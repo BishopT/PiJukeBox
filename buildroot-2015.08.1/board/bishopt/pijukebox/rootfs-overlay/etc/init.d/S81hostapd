@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Starting....
+#
+
+case "$1" in
+  start)
+ 	echo "Loading fr-latin9 keymap..."
+	/sbin/loadkmap < /etc/keymaps.d/fr-latin9.kmap
+	;;
+  restart|reload)
+	"$0" start
+	;;
+  *)
+	echo "Usage: $0 {start|restart}"
+	exit 1
+esac
+
+exit $?
+
