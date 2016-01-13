@@ -3,4 +3,4 @@ BOARDDIR=board/bishopt/pijukebox
 
     
 # Copy the rootfs additions
-cp -a $BOARDDIR/rootfs-overlay/* $TARGETDIR/
+cp -af $BOARDDIR/rootfs-overlay/* $TARGETDIR/
