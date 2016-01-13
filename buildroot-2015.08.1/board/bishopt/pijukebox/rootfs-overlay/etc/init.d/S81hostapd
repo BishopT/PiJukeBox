@@ -6,7 +6,7 @@
 case "$1" in
   start)
  	echo "Starting hostapd..."
-	hostapd -B /etc/hostapd/hostpad.conf
+	hostapd -B /etc/hostapd/hostapd.conf
 	;;
   restart|reload)
 	"$0" start
