@@ -1,2 +1,2 @@
 # PiJukeBox
-A RaspberryPi image for a car-jukebox based on mpd.
+A RaspberryPi image for an MPD based car jukebox 
