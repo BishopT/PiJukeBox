@@ -1,0 +1,8 @@
+#
+# Automatically generated file; DO NOT EDIT.
+#
+
+config BR2_EXTERNAL_PIJUKEBOX_PATH
+	string
+	default "/home/thomas/Documents/projects/PiJukeBox"
+

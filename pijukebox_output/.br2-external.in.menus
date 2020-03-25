@@ -1,0 +1,10 @@
+#
+# Automatically generated file; DO NOT EDIT.
+#
+
+menu "External options"
+
+comment "PIJUKEBOX (in /home/thomas/Documents/projects/PiJukeBox)"
+source "/home/thomas/Documents/projects/PiJukeBox/Config.in"
+
+endmenu

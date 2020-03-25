@@ -1,0 +1,47 @@
+#!/bin/sh -e
+#
+# Description:       Load the car switch from mausberry circuits management script
+#
+
+SCRIPT_FILE=/etc/car_switch/car_switch.sh
+LOG_FILE=/var/log/car_switch.log
+PID_FILE=/var/run/car_switch.pid
+
+start(){
+  sh $SCRIPT_FILE > $LOG_FILE &
+  echo $! > $PID_FILE
+}
+
+stop(){
+  kill -9 $(cat $PID_FILE)
+  rm $PID_FILE
+}
+
+case "$1" in
+  start)
+  if [ ! -f $PID_FILE ]
+  then
+    echo "Starting $SCRIPT_FILE script."
+    start
+  else
+    echo "$SCRIPT_FILE already started"
+  fi
+  ;;
+
+  stop)
+  echo "Stopping $SCRIPT_FILE script."
+  stop
+  ;;
+
+  restart|reload|force-reload)
+  stop
+  start
+  exit 0
+  ;;
+
+  *)
+  echo "Usage: $0 start | stop | restart"
+  exit 1
+esac
+
+
